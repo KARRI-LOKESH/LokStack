@@ -18,6 +18,17 @@ function AppWrapper() {
   const handleNavLinkClick = () => {
     if (window.innerWidth <= 768) setMenuOpen(false);
   };
+
+  const handleLogout = async () => {
+    await fetch("https://lokstackback.onrender.com/api/logout/", {
+      method: "POST",
+      credentials: "include",
+    });
+    localStorage.removeItem("lokstack_user");
+    setLoggedIn(false);
+    navigate("/");
+  };
+
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
@@ -45,7 +56,9 @@ function AppWrapper() {
             <Link to="/projects" className="nav-link" onClick={handleNavLinkClick}>Projects</Link>
             <Link to="/about" className="nav-link" onClick={handleNavLinkClick}>About</Link>
             <Link to="/contact" className="nav-link" onClick={handleNavLinkClick}>Contact</Link>
-
+            {loggedIn && (
+              <button className="nav-link logout-link" onClick={handleLogout}>Logout</button>
+            )}
           </nav>
         </header>
 

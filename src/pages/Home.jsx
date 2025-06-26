@@ -35,27 +35,6 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [menuOpen]);
 
-  const handleLogout = async () => {
-  try {
-    const response = await fetch('https://lokstackback.onrender.com/api/logout/', {
-      method: 'POST',
-      credentials: 'include', // important for session-based auth
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      console.log('Logged out successfully');
-      navigate('/login'); // ✅ redirect to login page
-    } else {
-      console.error('Logout failed with status:', response.status);
-    }
-  } catch (error) {
-    console.error('Logout error:', error);
-  }
-};
-
   return (
     <>
       <Helmet>
@@ -94,9 +73,6 @@ const Home = () => {
             <Link to="/contact" className="nav-link" onClick={handleNavLinkClick}>
               Contact
             </Link>
-            <button className="nav-linki" onClick={handleLogout}>
-              Logout
-            </button>
           </nav>
         </header>
 
