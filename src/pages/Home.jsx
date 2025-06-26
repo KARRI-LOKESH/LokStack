@@ -36,16 +36,25 @@ const Home = () => {
   }, [menuOpen]);
 
   const handleLogout = async () => {
-    try {
-      await fetch('https://lokstackback.onrender.com/logout/', {
-        method: 'POST',
-        credentials: 'include',
-      });
-      navigate('/login');
-    } catch (error) {
-      console.error('Logout failed', error);
+  try {
+    const response = await fetch('https://lokstackback.onrender.com/api/logout/', {
+      method: 'POST',
+      credentials: 'include', // important for session-based auth
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      console.log('Logged out successfully');
+      navigate('/login'); // ✅ redirect to login page
+    } else {
+      console.error('Logout failed with status:', response.status);
     }
-  };
+  } catch (error) {
+    console.error('Logout error:', error);
+  }
+};
 
   return (
     <>
@@ -85,7 +94,7 @@ const Home = () => {
             <Link to="/contact" className="nav-link" onClick={handleNavLinkClick}>
               Contact
             </Link>
-            <button className="nav-link" onClick={handleLogout}>
+            <button className="nav-linki" onClick={handleLogout}>
               Logout
             </button>
           </nav>

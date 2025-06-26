@@ -22,7 +22,7 @@ const LoginSignup = () => {
 
     const url = isLogin
       ? "https://lokstackback.onrender.com/api/login/" 
-      : "https://lokstackback.onrender.com/api/login/";
+      : "https://lokstackback.onrender.com/api/signup/";
       // const url = isLogin
       // ? "http://localhost:8000/api/login/"
       // : "http://localhost:8000/api/signup/";

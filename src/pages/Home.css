@@ -287,4 +287,32 @@ html, body {
   .nav-link:hover {
     color: #d9b3ff;
   }
+  .nav-linki {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-linki:hover {
+    color: #d9b3ff;
+  }
+}
+
+.nav-linki {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-linki::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #d9b3ff;
+  transition: width 0.3s ease;
 }
