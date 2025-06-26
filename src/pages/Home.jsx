@@ -85,7 +85,7 @@ const Home = () => {
             <Link to="/contact" className="nav-link" onClick={handleNavLinkClick}>
               Contact
             </Link>
-            <button className="nav-link logout-btn" onClick={handleLogout}>
+            <button className="nav-link" onClick={handleLogout}>
               Logout
             </button>
           </nav>
