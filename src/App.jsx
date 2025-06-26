@@ -57,7 +57,7 @@ function AppWrapper() {
             <Link to="/about" className="nav-link" onClick={handleNavLinkClick}>About</Link>
             <Link to="/contact" className="nav-link" onClick={handleNavLinkClick}>Contact</Link>
             {loggedIn && (
-              <Link to="/login" className="nav-link" onClick={handleLogout}>Logout</Link>
+              <button className="nav-link" onClick={handleLogout}>Logout</button>
             )}
           </nav>
         </header>
