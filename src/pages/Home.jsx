@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../pages/Home.css';
 import Projects from './Projects';
 import About from './About';
@@ -9,6 +9,7 @@ import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -34,11 +35,26 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [menuOpen]);
 
+  const handleLogout = async () => {
+    try {
+      await fetch('https://lokstackback.onrender.com/logout/', {
+        method: 'POST',
+        credentials: 'include',
+      });
+      navigate('/login');
+    } catch (error) {
+      console.error('Logout failed', error);
+    }
+  };
+
   return (
     <>
       <Helmet>
         <title>LOKSTACK</title>
-        <meta name="description" content="LOKSTACK builds modern full-stack solutions using React, Django, and Spring Boot." />
+        <meta
+          name="description"
+          content="LOKSTACK builds modern full-stack solutions using React, Django, and Spring Boot."
+        />
       </Helmet>
 
       <div className="home-container">
@@ -57,10 +73,21 @@ const Home = () => {
           </button>
 
           <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
-            <Link to="/home" className="nav-link" onClick={handleNavLinkClick}>Home</Link>
-            <Link to="/projects" className="nav-link" onClick={handleNavLinkClick}>Projects</Link>
-            <Link to="/about" className="nav-link" onClick={handleNavLinkClick}>About</Link>
-            <Link to="/contact" className="nav-link" onClick={handleNavLinkClick}>Contact</Link>
+            <Link to="/home" className="nav-link" onClick={handleNavLinkClick}>
+              Home
+            </Link>
+            <Link to="/projects" className="nav-link" onClick={handleNavLinkClick}>
+              Projects
+            </Link>
+            <Link to="/about" className="nav-link" onClick={handleNavLinkClick}>
+              About
+            </Link>
+            <Link to="/contact" className="nav-link" onClick={handleNavLinkClick}>
+              Contact
+            </Link>
+            <button className="nav-link logout-btn" onClick={handleLogout}>
+              Logout
+            </button>
           </nav>
         </header>
 
