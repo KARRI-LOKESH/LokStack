@@ -21,8 +21,8 @@ const LoginSignup = () => {
     setError("");
 
     const url = isLogin
-      ? "http://localhost:8000/api/login/"
-      : "http://localhost:8000/api/signup/";
+      ? "https://lokstackback.onrender.com/api/login/"
+      : "https://lokstackback.onrender.com/api/signup/";
 
     const payload = isLogin
       ? { email, password }
