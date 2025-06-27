@@ -48,7 +48,7 @@ const Home = () => {
       <div className="home-container">
         {/* Header */}
         <header className="header">
-          <img src="/logols.png" alt="LOKSTACK Logo" className="logo" />
+          <img src="/logolg.png" alt="LOKSTACK Logo" className="logo" />
 
           <button
             className={`hamburger ${menuOpen ? 'open' : ''}`}
