@@ -40,7 +40,7 @@ const Projects = () => {
       </Helmet>
 
       <section className="hero-section">
-        <h1 className="hero-title">LokGAN</h1>
+        <h1 className="hero-title">LOKGAN</h1>
         <p className="hero-subtitle">Building Future-Ready Web Solutions</p>
         <div className="hero-buttons">
           <button className="primary-btn" onClick={scrollToProjects}>
