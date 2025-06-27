@@ -26,7 +26,6 @@ html, body {
 /* Header */
 .header {
   display: flex;
-  justify-content: space-between; /* Logo left, nav right */
   align-items: center;
   margin: 0;
   padding: 0 20px;
@@ -41,11 +40,11 @@ html, body {
   animation: fadeSlideUp 1s ease forwards;
   animation-delay: 0.2s;
   gap: 40px;
+  justify-content: flex-start;
 }
 
 .logo {
   height: 45px;
-  margin-top: 0%;
   margin-left: 3%;
   object-fit: contain;
   filter: drop-shadow(-5px 0 10px rgba(144, 238, 144, 0.6)) drop-shadow(5px 0 10px rgba(157, 0, 255, 0.5));
@@ -57,50 +56,11 @@ html, body {
   to { text-shadow: 0 0 20px #bb84ff; }
 }
 
-/* Navigation */
-.nav {
-  display: flex;
-  gap: 24px;
-  font-size: 16px;
-  position: relative; /* relative on desktop */
-  align-items: center;
-  padding: 0;
-  height: auto;
-  transition: none;
-}
-
-.nav-link {
-  position: relative;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #d9b3ff;
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #d9b3ff;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
 /* Hero Section */
 .hero {
   text-align: left;
   padding: 35px 20px;
-  margin-top: 80px; /* To avoid header overlap */
+  margin-top: 80px;
   margin-bottom: 4px;
   animation: fadeSlideUp 1s ease forwards;
   animation-delay: 0.5s;
@@ -153,6 +113,8 @@ html, body {
   0%, 100% { box-shadow: 0 0 15px #bb84ff; }
   50% { box-shadow: 0 0 30px #cc99ff; }
 }
+
+/* Services Section */
 .services {
   display: flex;
   justify-content: space-between;
@@ -163,136 +125,4 @@ html, body {
   gap: 20px;
 }
 
-.services-left {
-  flex: 1;
-  min-width: 250px;
-}
-
-.services-title {
-  font-size: 35px;
-  font-weight: 800;
-  color: #67e8f9;
-  margin-bottom: 10px;
-}
-
-.services-desc {
-  color: #cbd5e1;
-  font-size: 25px;
-}
-.service-iconi {
-  width: 50px;
-  height: 40px;
-  color: #67e8f9;
-  filter: brightness(0) invert(1);
-}
-
-
-.services-right {
-  flex: 1;
-  min-width: 250px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.service-icon {
-  font-size: 40px;
-  color: #38bdf8;
-  transition: transform 0.3s, color 0.3s;
-}
-
-.service-icon:hover {
-  color: #22d3ee;
-  transform: scale(1.2);
-}
-
-/* Section Animation */
-@keyframes fadeSlideUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Hamburger Button */
-.hamburger {
-  display: none; /* hide on desktop */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 35px;
-  height: 25px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1004; /* above nav and header */
-  position: relative;
-}
-
-.hamburger span {
-  height: 3px;
-  background: white;
-  border-radius: 3px;
-  transition: 0.4s;
-  transform-origin: center;
-  display: block;
-  width: 100%;
-  margin-bottom: 4px;
-}
-
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Mobile Navigation */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    left: auto;
-    background-color: #1c012a;
-    width: 200px;
-    height: 100vh;
-    padding: 80px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.8);
-    transition: right 0.4s ease, opacity 0.3s ease;
-    opacity: 0;
-    z-index: 1002;
-  }
-
-  .nav.nav-open {
-    right: 0;
-    opacity: 1;
-  }
-
-  .nav-link {
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-  }
-
-  .nav-link:hover {
-    color: #d9b3ff;
-  }}
-  .nav-button {
-  background: none;
-  border: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  padding: 0;
-  text-align: left;
-}
+.

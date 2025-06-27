@@ -36,7 +36,7 @@ const Projects = () => {
     <div className="projects-page">
       <Helmet>
         <title>LOKGAN</title>
-        <meta name="description" content="LOKSTACK builds modern full-stack solutions using React, Django, and Spring Boot." />
+        <meta name="description" content="LOKGAN builds modern full-stack solutions using React, Django, and Spring Boot." />
       </Helmet>
 
       <section className="hero-section">

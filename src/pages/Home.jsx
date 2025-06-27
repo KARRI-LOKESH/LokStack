@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import '../pages/Home.css';
 import Projects from './Projects';
 import About from './About';
@@ -9,16 +8,9 @@ import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-  };
-
-  const handleNavLinkClick = () => {
-    if (window.innerWidth <= 768) {
-      setMenuOpen(false);
-    }
   };
 
   useEffect(() => {
@@ -46,33 +38,9 @@ const Home = () => {
       </Helmet>
 
       <div className="home-container">
-        {/* Header */}
+        {/* Header with Logo Only */}
         <header className="header">
           <img src="/logolg.png" alt="LOKSTACK Logo" className="logo" />
-          <button
-            className={`hamburger ${menuOpen ? 'open' : ''}`}
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
-          <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
-            <Link to="/home" className="nav-link" onClick={handleNavLinkClick}>
-              Home
-            </Link>
-            <Link to="/projects" className="nav-link" onClick={handleNavLinkClick}>
-              Projects
-            </Link>
-            <Link to="/about" className="nav-link" onClick={handleNavLinkClick}>
-              About
-            </Link>
-            <Link to="/contact" className="nav-link" onClick={handleNavLinkClick}>
-              Contact
-            </Link>
-          </nav>
         </header>
 
         {/* Hero Section */}
@@ -80,9 +48,6 @@ const Home = () => {
           <h1>LOKGAN</h1>
           <h2 className="hero-title">We Build Killer Web Solutions</h2>
           <p className="hero-subtitle">Leveraging the power of React, Django & Spring Boot</p>
-          <Link to="/projects">
-            <button className="hero-button">Our Projects</button>
-          </Link>
         </section>
 
         {/* Services */}
@@ -105,6 +70,7 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Sections (if you want preview on homepage) */}
         <Projects />
         <About />
         <Contact />
