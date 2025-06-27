@@ -6,7 +6,7 @@ const TermsOfService = () => {
     <div className="legal-page">
       <h1 className="legal-title">Terms of Service</h1>
       <p className="legal-text">
-        Welcome to LOKSTACK. By using our website and services, you agree to the following terms and conditions.
+        Welcome to LOKGAN. By using our website and services, you agree to the following terms and conditions.
       </p>
 
       <h2 className="legal-subtitle">1. Use of Services</h2>

@@ -64,7 +64,7 @@ const LoginSignup = () => {
   return (
     <div className="login-page">
       <div className="login-box">
-        <h1>{isLogin ? "🔐 Welcome Back!" : "🚀 Join LokStack Today!"}</h1>
+        <h1>{isLogin ? "🔐 Welcome Back!" : "🚀 Join LokGan Today!"}</h1>
         <form onSubmit={handleSubmit}>
           {!isLogin && (
             <input

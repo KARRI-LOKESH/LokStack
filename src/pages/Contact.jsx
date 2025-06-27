@@ -3,7 +3,7 @@ import './Contact.css';
 import { Helmet } from 'react-helmet';
 
 <Helmet>
-  <title>LOKSTACK</title>
+  <title>LOKGAN</title>
   <meta name="description" content="LOKSTACK builds modern full-stack solutions using React, Django, and Spring Boot." />
 </Helmet>
 

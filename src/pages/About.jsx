@@ -6,15 +6,15 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>LOKSTACK</title>
+        <title>LOKGAN</title>
         <meta name="description" content="LOKSTACK builds modern full-stack solutions using React, Django, and Spring Boot." />
       </Helmet>
 
       <div className="about-page">
         <div className="about-container">
-          <h1 className="about-title">About LOKSTACK</h1>
+          <h1 className="about-title">About LOKGAN</h1>
           <p className="about-desc">
-            A modern web solutions company founded by Lokesh Karri, a passionate developer building
+            A modern web solutions company founded by Lokesh Karri & Chinta Ganapathi, a passionate developers building
             full-stack apps using React, Django, Spring Boot, and microservices.
           </p>
 

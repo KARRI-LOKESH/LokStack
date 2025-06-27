@@ -21,7 +21,7 @@ const Projects = () => {
     {
       title: "Student Portal Web Application",
       techIcons: ["/python.png", "/react-logo.png", "/django-logo-negativ.png"],
-      demoUrl: "https://v0-student-portal-karri-lokeshs-projects.vercel.app",
+      demoUrl: "https://student-portal-gczq.vercel.app/login",
       githubUrl: "https://github.com/KARRI-LOKESH/Student_Portal"
     }
   ];
@@ -35,12 +35,12 @@ const Projects = () => {
   return (
     <div className="projects-page">
       <Helmet>
-        <title>LOKSTACK</title>
+        <title>LOKGAN</title>
         <meta name="description" content="LOKSTACK builds modern full-stack solutions using React, Django, and Spring Boot." />
       </Helmet>
 
       <section className="hero-section">
-        <h1 className="hero-title">LokStack</h1>
+        <h1 className="hero-title">LokGAN</h1>
         <p className="hero-subtitle">Building Future-Ready Web Solutions</p>
         <div className="hero-buttons">
           <button className="primary-btn" onClick={scrollToProjects}>
