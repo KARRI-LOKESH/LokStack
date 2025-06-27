@@ -49,7 +49,6 @@ const Home = () => {
         {/* Header */}
         <header className="header">
           <img src="/logolg.png" alt="LOKSTACK Logo" className="logo" />
-
           <button
             className={`hamburger ${menuOpen ? 'open' : ''}`}
             onClick={toggleMenu}
