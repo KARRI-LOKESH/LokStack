@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/logout/", {
+      const res = await fetch("https://lokstackback.onrender.com/api/signup/", {
         method: "POST",
         credentials: "include",
       });
