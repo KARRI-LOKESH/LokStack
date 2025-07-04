@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import '../pages/Home.css';
+// components/Home.jsx
+import React from 'react';
+import './Home.css';
 import Projects from './Projects';
 import About from './About';
 import Contact from './Contact';
@@ -7,42 +8,17 @@ import Footer from './Footer';
 import { Helmet } from 'react-helmet';
 
 const Home = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
-  }, [menuOpen]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768 && menuOpen) {
-        setMenuOpen(false);
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [menuOpen]);
-
   return (
     <>
       <Helmet>
         <title>LOKSTACK</title>
         <meta
           name="description"
-          content="LOKGAN builds modern full-stack solutions using React, Django, and Spring Boot."
+          content="LOKSTACK builds modern full-stack solutions using React, Django, and Spring Boot."
         />
       </Helmet>
 
       <div className="home-container">
-        {/* Header with Logo Only */}
-        <header className="header">
-          <img src="/logolg.png" alt="LOKSTACK Logo" className="logo" />
-        </header>
-
         {/* Hero Section */}
         <section className="hero">
           <h1>LOKSTACK</h1>
@@ -70,7 +46,7 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Sections (if you want preview on homepage) */}
+        {/* Sections */}
         <Projects />
         <About />
         <Contact />
