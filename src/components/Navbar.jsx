@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
@@ -15,18 +16,27 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    setMenuOpen(false); // close menu when route changes
+    setMenuOpen(false); // close menu on route changes
   }, [location]);
 
-  const handleLogout = () => {
-    // Clear user info from storage/session
-    localStorage.removeItem('lokstack_user');
+  const handleLogout = async () => {
+    try {
+      const res = await fetch("http://localhost:8000/api/logout/", {
+        method: "POST",
+        credentials: "include",
+      });
 
-    // Update logged-in state
-    setLoggedIn(false);
-
-    // Redirect to login or home page
-    navigate('/login');
+      if (res.ok) {
+        localStorage.removeItem("lokstack_user");
+        setLoggedIn(false);
+        navigate("/login");
+      } else {
+        const data = await res.json();
+        console.error("Logout failed:", data.error);
+      }
+    } catch (error) {
+      console.error("Network error during logout:", error);
+    }
   };
 
   return (
