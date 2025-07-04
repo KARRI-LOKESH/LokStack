@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
     <div className="legal-page">
       <h1 className="legal-title">Privacy Policy</h1>
       <p className="legal-text">
-        At LOKGAN, we respect your privacy and are committed to protecting your personal information.
+        At LOKSTACK, we respect your privacy and are committed to protecting your personal information.
         This Privacy Policy explains how we collect, use, and safeguard your data.
       </p>
 

@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <header className="navbar-header">
-      <img src="/logolg.png" alt="LOKGAN Logo" className="navbar-logo" />
+      <img src="/logols.png" alt="LOKSTACK Logo" className="navbar-logo" />
 
       <button className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Menu">
         <span></span>

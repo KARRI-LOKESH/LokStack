@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>LOKGAN</title>
+        <title>LOKSTACK</title>
         <meta
           name="description"
           content="LOKGAN builds modern full-stack solutions using React, Django, and Spring Boot."
@@ -45,7 +45,7 @@ const Home = () => {
 
         {/* Hero Section */}
         <section className="hero">
-          <h1>LOKGAN</h1>
+          <h1>LOKSTACK</h1>
           <h2 className="hero-title">We Build Killer Web Solutions</h2>
           <p className="hero-subtitle">Leveraging the power of React, Django & Spring Boot</p>
         </section>

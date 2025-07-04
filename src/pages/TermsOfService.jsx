@@ -6,7 +6,7 @@ const TermsOfService = () => {
     <div className="legal-page">
       <h1 className="legal-title">Terms of Service</h1>
       <p className="legal-text">
-        Welcome to LOKGAN. By using our website and services, you agree to the following terms and conditions.
+        Welcome to LOKSTACK. By using our website and services, you agree to the following terms and conditions.
       </p>
 
       <h2 className="legal-subtitle">1. Use of Services</h2>
@@ -16,7 +16,7 @@ const TermsOfService = () => {
 
       <h2 className="legal-subtitle">2. Intellectual Property</h2>
       <p className="legal-text">
-        All content on this site, including logos, designs, and text, is the property of LOKGAN and may not be used without permission.
+        All content on this site, including logos, designs, and text, is the property of LOKSTACK and may not be used without permission.
       </p>
 
       <h2 className="legal-subtitle">3. Limitation of Liability</h2>

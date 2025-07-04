@@ -7,10 +7,10 @@ const Projects = () => {
   // Project data
   const projects = [
     {
-      title: "Hotel Voice Command App",
+      title: "Hotel Service Management",
       techIcons: ["/Spring-boot.png", "/react-logo.png", "/ms.png"],
       demoUrl: "https://your-demo-link-hotel-app.com",
-      githubUrl: "https://github.com/yourusername/hotel-voice-command-app"
+      githubUrl: "https://github.com/KARRI-LOKESH/hotelservice"
     },
     {
       title: "Social Media Application",
@@ -35,12 +35,12 @@ const Projects = () => {
   return (
     <div className="projects-page">
       <Helmet>
-        <title>LOKGAN</title>
+        <title>LOKSTACK</title>
         <meta name="description" content="LOKGAN builds modern full-stack solutions using React, Django, and Spring Boot." />
       </Helmet>
 
       <section className="hero-section">
-        <h1 className="hero-title">LOKGAN</h1>
+        <h1 className="hero-title">LOKSTACK</h1>
         <p className="hero-subtitle">Building Future-Ready Web Solutions</p>
         <div className="hero-buttons">
           <button className="primary-btn" onClick={scrollToProjects}>
