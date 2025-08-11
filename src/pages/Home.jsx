@@ -35,6 +35,7 @@ const Home = () => {
           </div>
           <div className="hero-right">
             <img src={aaaImg} alt="Lokesh" title="Lokesh" />
+            
           </div>
         </section>
 

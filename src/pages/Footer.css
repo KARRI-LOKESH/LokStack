@@ -155,3 +155,25 @@
   transform: scale(1.3);
   filter: drop-shadow(0 0 8px #9d00ffbb);
 }
+.resume-button-container {
+  text-align: center;
+  margin-top: 15px;
+}
+.resume-link {
+  display: inline-block; /* or block */
+  margin: 15px auto 0 auto; /* top margin 15px, auto left and right */
+  padding: 8px 15px;
+  background-color: #9d00ff;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  width: max-content; /* only as wide as content */
+  text-align: center;
+  transition: background-color 0.3s ease;
+  display: block; /* this makes margin auto work */
+}
+
+.resume-link:hover {
+  background-color: #6700b3;
+}

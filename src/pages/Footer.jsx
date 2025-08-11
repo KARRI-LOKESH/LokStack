@@ -26,6 +26,12 @@ const Footer = () => {
         <Link to="/achivements">Achievements</Link>
         <Link to="/experience">Experience</Link>
       </div>
+       <div className="resume-button-container">
+  <a href="/lokstack/src/pages/Lokesh-Karri_developer (5).pdf" target="_blank" rel="noopener noreferrer" className="resume-link">
+    View Resume
+  </a>
+</div>
+
 
       <div className="footer-contact-info">
         <p>+91 7993549539</p>
