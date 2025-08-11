@@ -27,9 +27,9 @@ const Footer = () => {
         <Link to="/experience">Experience</Link>
       </div>
        <div className="resume-button-container">
-  <a href="/lokstack/src/pages/Lokesh-Karri_developer (5).pdf" target="_blank" rel="noopener noreferrer" className="resume-link">
-    View Resume
-  </a>
+ <a href="/resume.pdf" target="_blank" className="resume-link" rel="noopener noreferrer">
+  View Resume
+</a>
 </div>
 
 
