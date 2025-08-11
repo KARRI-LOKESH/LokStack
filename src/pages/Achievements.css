@@ -1,0 +1,37 @@
+.achievements-section {
+  padding: 2rem;
+  background-color: #08031d; /* matches footer bg */
+  font-family: 'Poppins', sans-serif;
+  color: #d1d5db;
+}
+
+.achievements-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #67e8f9; /* cyan accent */
+}
+
+.achievements-list {
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.achievements-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #d1d5db;
+  background: #1f2937;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 4px solid #9d00ff; /* purple accent */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.achievements-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}

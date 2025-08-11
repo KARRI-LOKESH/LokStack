@@ -6,21 +6,20 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>LOKSTACK</title>
-        <meta name="description" content="LOKSTACK builds modern full-stack solutions using React, Django, and Spring Boot." />
+        <title>Lokesh Karri - Portfolio</title>
+        <meta name="description" content="Lokesh Karri - Full Stack Developer specializing in React, Django, and Spring Boot." />
       </Helmet>
 
       <div className="about-page">
         <div className="about-container">
-          <h1 className="about-title">About LOKSTACK</h1>
+          <h1 className="about-title">About Me</h1>
           <p className="about-desc">
-            A modern web solutions company founded by Lokesh Karri a passionate developer building
-            full-stack apps using React, Django, Spring Boot, and microservices.
+            Hi, I’m Lokesh Karri — a passionate full-stack developer specializing in building modern, scalable web applications using React, Django, and Spring Boot. I love turning ideas into reality with clean code and innovative solutions.
           </p>
 
           <div className="about-boxes">
             <div className="about-box">
-              <h3>What We Do</h3>
+              <h3>What I Do</h3>
               <ul>
                 <li>Custom Web Application Development</li>
                 <li>Voice-enabled Hotel Service Platforms</li>
@@ -30,25 +29,25 @@ const About = () => {
             </div>
 
             <div className="about-box">
-              <h3>Our Values</h3>
+              <h3>My Values</h3>
               <ul>
-                <li>Innovation and Creativity</li>
+                <li>Innovation & Creativity</li>
                 <li>User-Centric Design</li>
                 <li>Performance & Scalability</li>
-                <li>Secure Coding Practices</li>
+                <li>Secure & Maintainable Code</li>
               </ul>
             </div>
 
             <div className="about-box">
-              <h3>Our Vision</h3>
+              <h3>My Vision</h3>
               <p>
-                To be a trusted tech partner for businesses by delivering powerful digital solutions that solve real-world problems and make life easier.
+                To become a trusted software engineer who delivers impactful digital solutions that solve real-world problems and improve people’s lives.
               </p>
             </div>
           </div>
 
           <p className="about-desc">
-            Our mission is to build powerful, scalable, and user-friendly applications that create impact.
+            I am dedicated to continuous learning and building powerful, user-friendly applications that make a difference.
           </p>
         </div>
       </div>

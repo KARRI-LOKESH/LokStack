@@ -6,10 +6,10 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import LoginSignup from './components/LoginSignup'; // if you have this
-
+import Skills from './pages/Skills'; // if you have this
+import Education from './pages/Education';
+import Experience from './pages/Experience';
+import Achievements from './pages/Achievements'; 
 function App() {
   return (
     <Router>
@@ -22,11 +22,10 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          {/* Optional login/signup page */}
-          <Route path="/login" element={<LoginSignup />} />
-          <Route path="/signup" element={<LoginSignup />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/experience" element={<Experience/>} />
+          <Route path="/achievements" element={<Achievements />} />
         </Routes>
       </main>
     </Router>

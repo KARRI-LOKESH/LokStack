@@ -4,8 +4,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background: linear-gradient(135deg, #0f051d, #22044e);
+  height: 75px;
+  background: rgb(4, 12, 58);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,40 +82,65 @@
   color: #000;
 }
 
-/* Hamburger Icon */
+/* Killer Hamburger Button */
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
-  background: none;
+  justify-content: space-around;
+  width: 32px;
+  height: 24px;
+  background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 1001;
+  padding: 0;
+  z-index: 1100;
+  transition: transform 0.3s ease;
 }
 
 .hamburger span {
-  height: 3px;
   width: 100%;
-  background-color: #fff;
-  border-radius: 3px;
-  transition: 0.4s;
+  height: 3.5px;
+  background: linear-gradient(90deg, #a855f7, #d946ef);
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: 4px 2px;
+  box-shadow:
+    0 0 6px #d946efaa,
+    0 0 10px #a855f7bb;
 }
 
+/* Animate hamburger lines when open */
 .hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 5px);
+  transform: rotate(45deg) translate(5px, 6px);
+  box-shadow:
+    0 0 8px #d946efdd,
+    0 0 14px #a855f7dd;
 }
 
 .hamburger.open span:nth-child(2) {
   opacity: 0;
+  transform: translateX(20px);
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -5px);
+  transform: rotate(-45deg) translate(5px, -6px);
+  box-shadow:
+    0 0 8px #d946efdd,
+    0 0 14px #a855f7dd;
 }
 
-/* Mobile Nav */
+/* Hover effect */
+.hamburger:hover span:nth-child(1),
+.hamburger:hover span:nth-child(3) {
+  filter: brightness(1.2);
+}
+
+.hamburger:hover span:nth-child(2) {
+  transform: translateX(4px);
+  opacity: 0.6;
+}
+
+/* Show hamburger only on mobile */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
