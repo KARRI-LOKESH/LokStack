@@ -5,12 +5,12 @@ const educationData = [
   {
     degree: "Bachelor of Engineering in Artificial Intelligence and Machine Learning",
     institution: "Avanthi Group Of Colleges | Vizianagaram",
-    duration: "2021 - 2025 | Completed",
+    duration: "2021 - 2025 | Completed | 8.0 CGPA",
   },
   {
     degree: "M.P.C",
     institution: "Gotlam Gayathri Junior College",
-    duration: "2019 - 2021 | Completed",
+    duration: "2019 - 2021 | Completed | 8.3 CGPA",
   }
 ];
 
