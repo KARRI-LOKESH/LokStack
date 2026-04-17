@@ -54,7 +54,6 @@ const VideoPortfolio = () => {
         LOKESH EDITS
       </motion.div>
 
-      {/* 🎬 Kinetic Logo */}
       <motion.div 
         className="floating-logo"
         animate={{ 

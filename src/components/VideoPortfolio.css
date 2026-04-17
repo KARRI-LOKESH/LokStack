@@ -328,7 +328,6 @@
   line-height: 1;
   cursor: pointer;
   transition: 0.3s;
-
 }
 
 .close-btn:hover { color: #bc43fa; transform: rotate(90deg) scale(1.1); }
