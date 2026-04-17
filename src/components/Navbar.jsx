@@ -7,16 +7,26 @@ const Navbar = () => {
   const location = useLocation();
   const navRef = useRef(null);
 
-  const toggleMenu = () => setMenuOpen(prev => !prev);
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+    { name: "Skills", path: "/skills" },
+    { name: "Education", path: "/education" },
+    { name: "Experience", path: "/experience" },
+    { name: "Achievements", path: "/achievements" }
+  ];
 
+  const toggleMenu = () => setMenuOpen(prev => !prev);
   const closeMenu = () => setMenuOpen(false);
 
-  // Close menu on route change
+  // Auto-close menu when a route changes
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
 
-  // Close menu on click outside
+  // Handle clicks outside the navbar to close the menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -25,18 +35,14 @@ const Navbar = () => {
     };
     if (menuOpen) {
       document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
     }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [menuOpen]);
 
   return (
     <header className="navbar-header" ref={navRef}>
       <Link to="/" className="logo-link">
-        <img src="/lk.png" alt="LOKSTACK Logo" className="navbar-logo" />
+        <img src="/lk.png" alt="Logo" className="navbar-logo" />
       </Link>
 
       <button
@@ -49,15 +55,19 @@ const Navbar = () => {
         <span></span>
       </button>
 
+      {/* The 'open' class here controls the mobile visibility */}
       <nav className={`navbar-nav ${menuOpen ? 'open' : ''}`}>
-        <Link to="/" className="navbar-link" onClick={closeMenu}>Home</Link>
-        <Link to="/projects" className="navbar-link" onClick={closeMenu}>Projects</Link>
-        <Link to="/about" className="navbar-link" onClick={closeMenu}>About</Link>
-        <Link to="/contact" className="navbar-link" onClick={closeMenu}>Contact</Link>
-        <Link to="/skills" className="navbar-link" onClick={closeMenu}>Skills</Link>
-        <Link to="/education" className="navbar-link" onClick={closeMenu}>Education</Link>
-        <Link to="/experience" className="navbar-link" onClick={closeMenu}>Experience</Link>
-        <Link to="/achievements" className="navbar-link" onClick={closeMenu}>Achievements</Link>
+        {navLinks.map((link) => (
+          <Link 
+            key={link.name} 
+            to={link.path} 
+            className={`navbar-link ${location.pathname === link.path ? 'active' : ''}`}
+            onClick={closeMenu}
+          >
+            <span className="link-status-dot"></span>
+            {link.name}
+          </Link>
+        ))}
       </nav>
     </header>
   );

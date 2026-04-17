@@ -1,89 +1,163 @@
+/* --- SKILLS SECTION WRAPPER --- */
 .skills-section {
-  padding: 2rem;
-  max-width: 700px;
-  margin: 50px auto;
-  background: linear-gradient(135deg, #0a0024, #1a093b);
-  border-radius: 15px;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  box-shadow: 0 10px 30px rgba(157, 0, 255, 0.2);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 5%;
+  position: relative;
+  z-index: 1;
 }
 
 .skills-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   text-align: center;
-  margin-bottom: 2rem;
-  color: #67e8f9;
-  font-size: 2rem;
-  letter-spacing: 1px;
+  margin-bottom: 80px;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(67, 134, 250, 0.5);
 }
 
-.skills-container {
+/* --- THE 3D SKILL GRID --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  perspective: 1500px; /* Essential for 3D effects on children */
+}
+
+/* --- THE PRISM BADGE --- */
+.skill-prism {
+  position: relative;
+  height: 250px;
+  transform-style: preserve-3d; /* Allows nested elements to have depth */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  transition: all 0.5s ease;
+  overflow: hidden; /* Important for the reflection effect */
+}
+
+/* Carbon Fiber/Textured background effect using pseudo-element */
+.skill-prism::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.3) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,0,0,0.3) 1px, transparent 1px);
+  background-size: 10px 10px;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* --- CONTENT WITHIN THE PRISM --- */
+.prism-content {
+  position: relative;
+  height: 100%;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transform: translateZ(50px); /* Pushes the text outward in 3D space */
+}
+
+/* Icons styling */
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #fff;
+  font-family: 'Space Mono', monospace; /* For the "TS", "JS" icons */
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
 }
 
 .skill-name {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   font-weight: 600;
-  margin-bottom: 8px;
-  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-.skill-bar-background {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 30px;
-  height: 28px;
-  overflow: hidden;
-  position: relative;
-  backdrop-filter: blur(5px);
-}
-
-.skill-bar-fill {
-  height: 100%;
-  width: 0;
-  border-radius: 30px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 12px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.skill-bar-fill.animate {
-  animation: fillBar 1.8s ease-out forwards;
-}
-
-.skill-bar-fill:hover {
-  transform: scale(1.03);
-}
-
-/* Colors for different skill levels */
-.skill-bar-fill.advanced {
-  background: linear-gradient(90deg, #00ff88, #00b3ff);
-  box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
-}
-
-.skill-bar-fill.intermediate {
-  background: linear-gradient(90deg, #f5af46, #987c28);
-  box-shadow: 0 0 12px rgba(220, 158, 65, 0.6);
-}
-
-.skill-bar-fill.beginner {
-  background: linear-gradient(90deg, #ff4d4d, #ff6b81);
-  box-shadow: 0 0 12px rgba(255, 77, 77, 0.6);
-}
-
+/* --- THE GLOWING LEVEL TEXT --- */
 .skill-level {
-  font-size: 0.85rem;
-  user-select: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--glow-color); /* Defined in JS style prop */
+  text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Bar fill animation */
-@keyframes fillBar {
-  from { width: 0; }
-  to { width: var(--target-width); }
+/* --- THE NEON UNDERGLOW PARTICLE --- */
+.prism-glow {
+  position: absolute;
+  bottom: -40px; /* Positions it below the badge */
+  left: 50%;
+  transform: translateX(-50%) translateZ(-20px); /* Anchors it slightly back */
+  width: 80%;
+  height: 80px;
+  border-radius: 50%;
+  filter: blur(25px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- HOVER INTERACTION --- */
+.skill-prism:hover {
+  background: rgba(5, 2, 26, 0.95);
+  border-color: rgba(67, 134, 250, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+/* Intense glow intensification on hover */
+.skill-prism:hover .prism-glow {
+  transform: translateX(-50%) translateZ(-10px); /* Pulls glow forward slightly */
+  filter: blur(15px);
+  opacity: 1 !important; /* Forces opacity to 1 on hover regardless of level */
+}
+
+/* Glass reflection shine on hover */
+.skill-prism::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 50%;
+  height: 300%;
+  background: linear-gradient(
+    to bottom right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  transform: rotate(45deg);
+  z-index: 3;
+  pointer-events: none;
+  transition: all 0.7s ease;
+}
+
+.skill-prism:hover::before {
+  top: -50%;
+  left: 150%;
+}
+
+/* --- RESPONSIVE FIXES --- */
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skill-prism {
+    height: 220px;
+  }
 }

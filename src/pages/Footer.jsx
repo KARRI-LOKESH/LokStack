@@ -1,64 +1,75 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedin, FaInstagram, FaGithub, FaTwitter } from "react-icons/fa";
+import { motion } from "framer-motion"; // Highly recommended for the 3D effect
 import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer-perspective-container">
+      <motion.div 
+        className="footer-glass-card"
+        initial={{ rotateX: 20, opacity: 0 }}
+        whileInView={{ rotateX: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <div className="footer-glow"></div>
 
-      <div className="footer-intro">
-        <p>
-          Lokesh's Portfolio<br />
-          Thank you for visiting my personal portfolio website.<br />
-          Connect with me over socials.<br /><br />
-          Keep Rising 🚀. Connect with me over live chat!
-        </p>
-      </div>
+        <div className="footer-content">
+          <div className="footer-intro">
+            <h2 className="brand-logo">LOK<span>ESH</span></h2>
+            <p className="intro-text">
+              SYSTEM STATUS: ONLINE <br />
+              CONNECTED TO CLOUD_ENGINE_V3
+            </p>
+            <div className="live-chat-tag">
+              <span className="pulse-dot"></span> KEEP RISING 🚀
+            </div>
+          </div>
 
-      <h3 className="quick-links-heading">Quick Links</h3>
+          <div className="footer-links-section">
+            <h3 className="section-heading">Navigation</h3>
+            <div className="footer-quick-links">
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/skills">Skills</Link>
+              <Link to="/education">Education</Link>
+              <Link to="/achievements">Achievements</Link>
+              <Link to="/experience">Experience</Link>
+            </div>
+          </div>
 
-      <div className="footer-quick-links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/skills">Skills</Link>
-        <Link to="/education">Education</Link>
-        <Link to="/achivements">Achievements</Link>
-        <Link to="/experience">Experience</Link>
-      </div>
-       <div className="resume-button-container">
- <a href="/resume.pdf" target="_blank" className="resume-link" rel="noopener noreferrer">
-  View Resume
-</a>
-</div>
+          <div className="footer-contact-section">
+            <h3 className="section-heading">Contact_Data</h3>
+            <div className="footer-contact-info">
+              <p>TEL: +91 7993549539</p>
+              <p>MAIL: karrilokesh108@gmail.com</p>
+              <p>LOC: Andhra Pradesh, IN</p>
+            </div>
+            
+            <div className="footer-action-row">
+              <a href="/resume.pdf" target="_blank" className="resume-link" rel="noopener noreferrer">
+                ACCESS_RESUME
+              </a>
+              <div className="social-icons">
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+                <a href="https://instagram.com" target="_blank" rel="noreferrer"><FaInstagram /></a>
+                <a href="https://github.com" target="_blank" rel="noreferrer"><FaGithub /></a>
+                <a href="https://twitter.com" target="_blank" rel="noreferrer"><FaTwitter /></a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
-      <div className="footer-contact-info">
-        <p>+91 7993549539</p>
-        <p>karrilokesh108@gmail.com</p>
-        <p>Andhrapradhesh, India-535579</p>
-      </div>
-
-      <div className="social-icons">
-        <a href="https://www.linkedin.com/in/lokesh-karri-06532427a/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-          <FaLinkedin />
-        </a>
-        <a href="https://instagram.com/lokesh_karri_1" target="_blank" rel="noreferrer" aria-label="Instagram">
-          <FaInstagram />
-        </a>
-        <a href="https://github.com/KARRI-LOKESH/" target="_blank" rel="noreferrer" aria-label="GitHub">
-          <FaGithub />
-        </a>
-        <a href="https://twitter.com/your-twitter" target="_blank" rel="noreferrer" aria-label="Twitter">
-          <FaTwitter />
-        </a>
-      </div>
-
-      <div className="footer-bottom">
-        <p>Designed with ❤️ by Karri Lokesh</p>
-        <p>&copy; {new Date().getFullYear()} LokStack. All rights reserved.</p>
-      </div>
-
+        <div className="footer-bottom">
+          <div className="footer-line"></div>
+          <div className="footer-legal">
+            <p>DESIGNED BY KARRI LOKESH // CORE_V1.0</p>
+            <p>&copy; {new Date().getFullYear()} ALL RIGHTS RESERVED</p>
+          </div>
+        </div>
+      </motion.div>
     </footer>
   );
 };
