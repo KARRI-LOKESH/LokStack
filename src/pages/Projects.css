@@ -1,11 +1,11 @@
 /* --- PROJECTS PAGE WRAPPER --- */
 .projects-page {
-  padding: 80px 20px;
+  padding: 60px 20px; /* Reduced padding for mobile */
   background: transparent;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  perspective: 1500px; /* Depth for the entire grid */
+  perspective: 1500px; 
 }
 
 .projects-section {
@@ -16,9 +16,9 @@
 /* --- SECTION HEADING --- */
 .section-heading {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 8vw, 4rem); /* Better scaling for mobile */
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 50px; /* Reduced gap */
   color: #fff;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -28,8 +28,9 @@
 /* --- PROJECT CARDS GRID --- */
 .project-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 40px;
+  /* Adjusts from 1 column on mobile to 3+ on laptop */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 25px; /* Tighter gaps for smaller screens */
   transform-style: preserve-3d;
 }
 
@@ -40,7 +41,7 @@
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  padding: 40px;
+  padding: 30px; /* Responsive padding */
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), 
@@ -49,31 +50,25 @@
   cursor: pointer;
 }
 
-/* The Glossy Reflection Overlay */
+/* Glossy Overlay */
 .project-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    125deg,
-    transparent 0%,
-    transparent 40%,
-    rgba(255, 255, 255, 0.1) 50%,
-    transparent 60%,
-    transparent 100%
-  );
+  background: linear-gradient(125deg, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%, transparent 100%);
   background-size: 200% 200%;
   background-position: 200% 200%;
   transition: background-position 0.8s ease;
   pointer-events: none;
   z-index: 5;
+  border-radius: 20px;
 }
 
 .project-card:hover {
-  transform: rotateX(10deg) rotateY(10deg) translateZ(30px);
+  /* On laptop, maintain the 3D tilt */
+  transform: rotateX(10deg) rotateY(10deg) translateZ(20px);
   border-color: #4386fa;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 
-              0 0 20px rgba(67, 134, 250, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(67, 134, 250, 0.2);
 }
 
 .project-card:hover::after {
@@ -82,71 +77,113 @@
 
 /* Content Lift */
 .project-card h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #fff;
-  margin-bottom: 15px;
-  transform: translateZ(60px); /* Massive lift for title */
-  text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  margin-bottom: 12px;
+  transform: translateZ(40px); /* Slightly reduced for better fit */
 }
 
 .project-desc {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #b0c4de;
-  margin-bottom: 25px;
-  transform: translateZ(40px);
+  margin-bottom: 20px;
+  transform: translateZ(30px);
+  line-height: 1.5;
 }
 
-/* Tech Icons Lift */
 .tech-icons {
   display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
-  transform: translateZ(50px);
+  flex-wrap: wrap; /* Prevent icons from breaking card width */
+  gap: 12px;
+  margin-bottom: 25px;
+  transform: translateZ(35px);
 }
 
 .tech-icons img {
-  height: 30px;
-  filter: drop-shadow(0 0 8px rgba(67, 134, 250, 0.5));
+  height: 25px;
+  width: auto;
 }
 
-/* Buttons with Neon Effect */
 .project-links {
   display: flex;
-  gap: 15px;
-  transform: translateZ(70px); /* Buttons float highest */
+  gap: 12px;
+  transform: translateZ(50px);
 }
 
 .project-btn {
-  padding: 12px;
-  border-radius: 10px;
+  flex: 1; /* Equal width buttons on mobile */
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
   border: 1px solid #4386fa;
   background: rgba(67, 134, 250, 0.05);
   color: #fff;
   font-weight: 600;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  text-decoration: none;
 }
 
-.project-btn:hover {
-  background: #4386fa;
-  box-shadow: 0 0 20px rgba(67, 134, 250, 0.6);
-  transform: scale(1.05);
+/* --- MEDIA QUERIES FOR FULL RESPONSIVENESS --- */
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 1024px) {
+  .project-cards {
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .project-card {
+    padding: 25px;
+  }
 }
 
-/* --- ENTRANCE REVEAL --- */
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 40px 15px;
+    perspective: 1000px; /* Reduce perspective for smaller screens */
+  }
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .project-card {
+    /* Reduce 3D intensity on mobile to prevent clipping */
+    transform: none !important; 
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:active {
+    transform: scale(0.98) !important; /* Visual feedback on tap */
+  }
+
+  /* Flatten the 3D elements slightly for mobile readability */
+  .project-card h3, 
+  .project-desc, 
+  .tech-icons, 
+  .project-links {
+    transform: translateZ(10px); 
+  }
+
+  .project-cards {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 20px;
+  }
+}
+
+/* Entrance Animation */
 @keyframes projectReveal {
   from {
     opacity: 0;
-    transform: rotateX(-30deg) translateY(50px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: rotateX(0) translateY(0);
+    transform: translateY(0);
   }
 }
 
 .project-card {
-  animation: projectReveal 1s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  animation: projectReveal 0.8s ease-out backwards;
 }
