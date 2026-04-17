@@ -9,23 +9,47 @@
     <meta name="keywords" content="LOKSTACK, React, Django, Spring Boot, Full Stack, Portfolio, Web Development" />
     <meta name="author" content="Lokesh Karri" />
 
+    <!-- Theme Color (kept neutral) -->
+    <meta name="theme-color" content="#ffffff" />
+
     <!-- Favicon -->
     <link rel="icon" href="/vite.svg" type="image/svg+xml" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  integrity="sha512-..."
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 
+    <!-- 🔥 Minimal base styles -->
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: transparent; /* no black */
+        font-family: 'Poppins', sans-serif;
+
+        /* Reduce pull-to-refresh */
+        overscroll-behavior-y: none;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+
     <title>LOKSTACK | Killer Web Solutions</title>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- React App -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
