@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# 🔥 ADD THIS (VERY IMPORTANT)
+*.mp4
+*.mov
+*.avi
+
+public/videos/
+src/videos/
