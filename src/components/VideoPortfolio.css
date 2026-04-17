@@ -294,6 +294,7 @@
   transform-style: preserve-3d;
 }
 
+
 .video-frame-3d {
   background: #000;
   border-radius: 20px;
@@ -327,7 +328,7 @@
   line-height: 1;
   cursor: pointer;
   transition: 0.3s;
-  
+
 }
 
 .close-btn:hover { color: #bc43fa; transform: rotate(90deg) scale(1.1); }
