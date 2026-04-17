@@ -9,6 +9,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Skills from './pages/Skills';
 import Education from './pages/Education';
+import VideoPortfolio from './components/VideoPortfolio';
 import Experience from './pages/Experience';
 import Achievements from './pages/Achievements'; 
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/education" element={<Education />} />
             <Route path="/experience" element={<Experience/>} />
+            <Route path="/video-portfolio" element={<VideoPortfolio />} />
             <Route path="/achievements" element={<Achievements />} />
           </Routes>
         </main>

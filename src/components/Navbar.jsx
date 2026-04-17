@@ -15,6 +15,7 @@ const Navbar = () => {
     { name: "Skills", path: "/skills" },
     { name: "Education", path: "/education" },
     { name: "Experience", path: "/experience" },
+    {name: "Editing", path: "/video-portfolio" },
     { name: "Achievements", path: "/achievements" }
   ];
 
